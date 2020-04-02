@@ -16,9 +16,9 @@ your favourate {{ class }} is {{item}}
 """
 
 @app.route('/')
-def hello_world(self):
-    cls1 = self.request.get('cls')
-    item = self.request.get('item')
+def hello_world():
+    cls1 = request.args.get('cls', default = '-', type = str)
+    item = request.args.get('item', default = '-', type = str)
     
     t = Template(index_html)
     c = Context({"class": cls1, "item":item})
