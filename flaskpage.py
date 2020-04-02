@@ -34,7 +34,6 @@ def hello_world():
 
     with tag('html'):
         with tag('body'):
-        with tag('body'):
             with tag('p', id = 'main'):
                 text('your favourate ' + cls1 + ' is ' + item)
 
