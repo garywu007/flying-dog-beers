@@ -16,7 +16,7 @@ your favourate {{ class }} is {{item}}
 """
 
 @app.route('/')
-def hello_world():
+def hello_world(self):
     cls1 = self.request.get('cls')
     item = self.request.get('item')
     
