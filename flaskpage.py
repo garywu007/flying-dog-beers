@@ -4,27 +4,6 @@ from yattag import Doc
 
 app = Flask(__name__)
 
-index_html = """
-<html>
-<head>
-<title>i know what's your favourate {{ class }}</title>
-</head>
-<body>
-your favourate {{ class }} is {{item}}
-</body>
-</html>
-"""
-doc, tag, text = Doc().tagtext()
-
-with tag('html'):
-    with tag('body'):
-        with tag('p', id = 'main'):
-            text('some text')
-        with tag('a', href='/my-url'):
-            text('some link')
-
-result = doc.getvalue()
-
 @app.route('/')
 def hello_world():
     cls1 = request.args.get('cls', default = '-', type = str)
