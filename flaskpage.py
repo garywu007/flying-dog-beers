@@ -1,6 +1,8 @@
 import sys
 from flask import Flask, request
 from django.template import Template, Context
+from django.conf import settings
+settings.configure()
 
 app = Flask(__name__)
 
