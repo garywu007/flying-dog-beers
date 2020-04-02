@@ -1,5 +1,6 @@
 import sys
 from flask import Flask
+from django.template import Template, Context
 
 app = Flask(__name__)
 
@@ -16,8 +17,8 @@ your favourate {{ class }} is {{item}}
 
 @app.route('/')
 def hello_world():
-    cls1 = request.GET.get('cls')
-    item = request.GET.get('item')
+    cls1 = self.request.get('cls')
+    item = self.request.get('item')
     
     t = Template(index_html)
     c = Context({"class": cls1, "item":item})
