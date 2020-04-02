@@ -33,6 +33,9 @@ def hello_world():
     doc, tag, text = Doc().tagtext()
 
     with tag('html'):
+        with tag('head'):
+            with tag('title'):
+                text('i know what you think~~');
         with tag('body'):
             with tag('p', id = 'main'):
                 text('your favourate ' + cls1 + ' is ' + item)
@@ -40,7 +43,7 @@ def hello_world():
     result = doc.getvalue()
     return result
 
-@app.route('/test')
-def test_page():
-    print("/test")
-    return 'In test page!'
+@app.route('/test/<first>/<second>')
+def test_page(first, second):
+    print(first)
+    return 'your most favourate ' + first + ' is ' + second
