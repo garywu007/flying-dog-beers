@@ -1,5 +1,5 @@
 import sys
-from flask import Flask
+from flask import Flask, request
 from django.template import Template, Context
 
 app = Flask(__name__)
